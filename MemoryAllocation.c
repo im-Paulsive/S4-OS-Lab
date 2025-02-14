@@ -20,6 +20,25 @@ int main() {
     int n;//to store no.of process
     int m; //to store no.of memory blocks
     int ch;
+    printf("enter number of processes");
+    scanf("%d",&n);
+    printf("enter process id and size\n");
+    for(int i=0;i<n;++i)
+    {
+        printf("enter pid of process %d",i+1);
+        scanf("%d",&p[i].pid);
+         printf("enter size of process %d",i+1);
+        scanf("%d",&p[i].size);
+    }
+    printf("enter number of memory blocks");
+    scanf("%d",&m);
+    for(int i=0;i<m++i)
+    {
+        printf("enter size of memory block %d\n",i+1);
+        scanf("%d",&m[i].size);
+         printf("enter size of process %d",i+1);
+        scanf("%d",&p[i].size);
+    }
     do
     {
         printf("enter choice\n");
