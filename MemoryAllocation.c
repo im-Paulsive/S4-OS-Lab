@@ -13,8 +13,8 @@ struct memory
 void firstfit(int n,int m);
 void bestfit(int n,int m);
 void worstcase(int n,int m);
-void display(int m_size); //to display remaining memory size
-void reset(int m_size); //To reset each memory block 
+void display(int m); //to display remaining memory size
+void reset(int m); //To reset each memory block 
 int main() {
     
     int n;//to store no.of process
@@ -25,19 +25,19 @@ int main() {
     printf("enter process id and size\n");
     for(int i=0;i<n;++i)
     {
-        printf("enter pid of process %d",i+1);
+        printf("enter pid of process %d:",i+1);
         scanf("%d",&p[i].pid);
-         printf("enter size of process %d",i+1);
+         printf("enter size of process %d\:",i+1);
         scanf("%d",&p[i].size);
     }
-    printf("enter number of memory blocks");
+    printf("\n\nenter number of memory blocks");
     scanf("%d",&m);
     for(int i=0;i<m++i)
     {
-        printf("enter size of memory block %d\n",i+1);
+        printf("enter size of memory block %d:",i+1);
         scanf("%d",&m[i].size);
-         printf("enter size of process %d",i+1);
-        scanf("%d",&p[i].size);
+        m[i].is_allocated=0;
+        m[i].remaining=m[i].size;
     }
     do
     {
@@ -68,7 +68,26 @@ int main() {
 
     return 0;
 }
+void reset(int m)
+{
+  for(int i=0;i<m++i)
+    {
+        m[i].is_allocated=0;
+        m[i].remaining=m[i].size;
+    }  
+}
  void firstfit(int n,int m)
     {
-           
+        printf("\nFirst fit memory Allocation:\n");
+        for(int i=0;i<n;++i)
+        {
+            int allocated=0;
+            for(int j=0;j<m;++j)
+            {
+                if(m[j].remaing>=p[i].size||m[j].is_allocated==0)
+                {
+                    
+                }
+            }
+        }
     }
