@@ -16,7 +16,7 @@ void* reader(void* arg)
         sem_wait(&writeblock);
     sem_post(&mutex);
     
-    printf("reader%d reads %d",f,data);
+    printf("reader%d reads %d\n",f,data);
     sleep(1);
     
     sem_wait(&mutex);
@@ -31,7 +31,7 @@ void* writer(void* arg)
     int f=*(int*)arg;
     sem_wait(&writeblock);
     data++;
-    printf("writer %d wrote data %d",f,data);
+    printf("writer %d wrote data %d\n",f,data);
     sleep(1);
     sem_post(&writeblock);
     return NULL;
